@@ -1,5 +1,18 @@
+"""
+Day 2 - Iterables and Iterators
+
+Topics Covered:
+1. Memory usage: List vs Range
+2. Iterable vs Iterator
+3. iter() and next()
+4. Internal working of for loops
+5. Custom implementation of a for loop
+6. Iterator identity: iter(iterator)
+7. Custom implementation of range()
+"""
+
 # Iteartion is a term of taking each item of something one after another.
- import sys
+import sys
 #
 num = [1,2,3,4,5]
 for i in num:
@@ -7,6 +20,7 @@ for i in num:
 
 # Special thing about an Iterator is it never stored entire data in the memory.
 # eg:
+
 L = [x for x in range(1,1000000)]
 print(sys.getsizeof(L)/1024)
 #
@@ -23,7 +37,7 @@ for i in a:
     print(i) # TypeError: 'int' object is not iterable
 
 # b) by usnig dir() method
- b = [12,3,4,5,]
+b = [12,3,4,5,]
 print(dir(b))
 # in output we can see the '__iter__', which means it is an iterable object.
 # If not then the object is not iterable.
