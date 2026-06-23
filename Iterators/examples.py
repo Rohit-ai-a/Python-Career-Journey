@@ -1,5 +1,5 @@
 # Iteartion is a term of taking each item of something one after another.
- import sys
+import sys
 #
 num = [1,2,3,4,5]
 for i in num:
@@ -23,7 +23,7 @@ for i in a:
     print(i) # TypeError: 'int' object is not iterable
 
 # b) by usnig dir() method
- b = [12,3,4,5,]
+b = [12,3,4,5,]
 print(dir(b))
 # in output we can see the '__iter__', which means it is an iterable object.
 # If not then the object is not iterable.
