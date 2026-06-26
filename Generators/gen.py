@@ -1,3 +1,12 @@
+"""
+Topics Covered:
+1. Introduction to Generators
+2. yield vs return
+3. State preservation in generators
+4. Custom range generator
+5. Generator Expressions
+6. Memory-efficient iteration
+"""
 # Python generators are simple way of creating Iterators.
 
 # benefits :
@@ -7,6 +16,17 @@
 
 
 # python generator is nothing but it is a function
+#     MemoryEfficient:
+import sys
+
+L =[i for i in range(1,10000000)]
+G = (i for i in range(1,10000000))
+print(sys.getsizeof(L)/1024, "Kb")
+print(sys.getsizeof(G)/1024,"Kb")
+# diff:
+# 87006.9921875 Kb this one is by using list
+# 0.1875 Kb by using generators
+
 # a)
 def geb_deno():
 
@@ -65,9 +85,9 @@ for i in L:
     print(i)
 
 # but in generator
-# output must be same but its a generator expression
-# we dont have to create function for it and also it calls anonymos function
-# we can dirctly use it
+# The output is the same, but this is a generator expression.
+# We do not need to create a separate function.
+# Values are generated lazily, one at a time.
 gen = (i ** 2 for i in range(1,11))
 
 for i in gen:
